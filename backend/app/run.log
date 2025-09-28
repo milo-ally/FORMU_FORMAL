@@ -1,0 +1,70 @@
+nohup: ignoring input
+2025-09-19 11:35:17.826 | INFO     | __main__:start_server:29 - Starting server...
+2025-09-19 11:35:17.827 | INFO     | __main__:start_server:30 - Working directory: /var/www/FORMU_FORMAL/backend
+2025-09-19 11:35:18.580 | INFO     | app.main:_startup_init_db:59 - Database and tables are ready
+
+--- Sending API Request via SoraService ---
+URL: https://jy.ai666.net/v1/images/generations
+Params: {'async': 'true'}
+Data: {'model': 'sora_image', 'prompt': 'a girl , cute, anime, by the seashore, with sunset glowing on her blonde hair, (bokeh: 1.5)', 'n': 1, 'size': '1024x1024'}
+
+2025-09-19 11:36:29.790 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "POST /sora/generate HTTP/1.0" 200 - 0.62s
+2025-09-19 11:36:33.496 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 0.67s
+2025-09-19 11:36:36.309 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 0.49s
+2025-09-19 11:36:40.386 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 1.56s
+2025-09-19 11:36:42.277 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 0.46s
+2025-09-19 11:36:45.993 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 1.18s
+2025-09-19 11:36:48.503 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 0.69s
+2025-09-19 11:36:56.356 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 5.53s
+2025-09-19 11:36:56.843 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 0.47s
+2025-09-19 11:36:57.313 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 0.45s
+2025-09-19 11:37:00.276 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 0.46s
+2025-09-19 11:37:03.312 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 0.49s
+2025-09-19 11:37:06.270 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 0.45s
+2025-09-19 11:37:09.283 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/c85ff359-6bb4-465f-8ff8-01d58cfe37c6 HTTP/1.0" 200 - 0.47s
+2025-09-19 11:37:09.325 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "POST /api/usage/increment HTTP/1.0" 200 - 0.02s
+
+--- Sending API Request via SoraService ---
+URL: https://jy.ai666.net/v1/images/generations
+Params: {'async': 'true'}
+Data: {'model': 'sora_image', 'prompt': 'a girl , cute, anime, by the seashore, with sunset glowing on her blonde hair, (bokeh: 1.5)', 'n': 1, 'size': '1024x1024'}
+
+2025-09-19 11:39:57.199 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "POST /sora/generate HTTP/1.0" 200 - 0.65s
+2025-09-19 11:40:00.699 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 0.48s
+2025-09-19 11:40:03.717 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 0.50s
+2025-09-19 11:40:07.677 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 1.45s
+2025-09-19 11:40:09.880 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 0.66s
+2025-09-19 11:40:12.669 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 0.45s
+2025-09-19 11:40:15.652 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 0.43s
+2025-09-19 11:40:18.669 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 0.45s
+2025-09-19 11:40:21.717 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 0.50s
+2025-09-19 11:40:24.890 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 0.67s
+2025-09-19 11:40:27.686 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 0.45s
+2025-09-19 11:40:30.699 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 0.47s
+2025-09-19 11:40:33.681 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 0.45s
+2025-09-19 11:40:36.765 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/aaf98ff5-3e2f-460b-8db2-000e3edb1a46 HTTP/1.0" 200 - 0.54s
+2025-09-19 11:40:36.792 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "POST /api/usage/increment HTTP/1.0" 200 - 0.01s
+
+--- Sending API Request via SoraService ---
+URL: https://jy.ai666.net/v1/images/generations
+Params: {'async': 'true'}
+Data: {'model': 'sora_image', 'prompt': 'a girl , cute, anime, by the seashore, with sunset glowing on her blonde hair, (bokeh: 1.5)', 'n': 1, 'size': '1024x1024'}
+
+2025-09-19 11:42:05.350 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "POST /sora/generate HTTP/1.0" 200 - 0.60s
+2025-09-19 11:42:08.856 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/e56f33d3-8952-4b78-9675-d79938c122c3 HTTP/1.0" 200 - 0.48s
+2025-09-19 11:42:11.850 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/e56f33d3-8952-4b78-9675-d79938c122c3 HTTP/1.0" 200 - 0.47s
+2025-09-19 11:42:15.782 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/e56f33d3-8952-4b78-9675-d79938c122c3 HTTP/1.0" 200 - 0.56s
+2025-09-19 11:42:18.647 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/e56f33d3-8952-4b78-9675-d79938c122c3 HTTP/1.0" 200 - 0.42s
+2025-09-19 11:42:21.685 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/e56f33d3-8952-4b78-9675-d79938c122c3 HTTP/1.0" 200 - 0.46s
+2025-09-19 11:42:24.686 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/e56f33d3-8952-4b78-9675-d79938c122c3 HTTP/1.0" 200 - 0.46s
+2025-09-19 11:42:27.703 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/e56f33d3-8952-4b78-9675-d79938c122c3 HTTP/1.0" 200 - 0.47s
+2025-09-19 11:42:30.694 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/e56f33d3-8952-4b78-9675-d79938c122c3 HTTP/1.0" 200 - 0.46s
+2025-09-19 11:42:33.656 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/e56f33d3-8952-4b78-9675-d79938c122c3 HTTP/1.0" 200 - 0.43s
+2025-09-19 11:42:36.681 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/e56f33d3-8952-4b78-9675-d79938c122c3 HTTP/1.0" 200 - 0.45s
+2025-09-19 11:42:39.931 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/e56f33d3-8952-4b78-9675-d79938c122c3 HTTP/1.0" 200 - 0.68s
+2025-09-19 11:42:42.716 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /sora/tasks/e56f33d3-8952-4b78-9675-d79938c122c3 HTTP/1.0" 200 - 0.49s
+2025-09-19 11:42:42.735 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "POST /api/usage/increment HTTP/1.0" 401 - 0.00s
+2025-09-19 11:44:31.755 | INFO     | app.main:upload_image:82 - Image uploaded: uploads/20250919_114431_9f7c580e-3bca-4de7-9afa-7362d6e82746.png
+2025-09-19 11:44:31.755 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "POST /upload HTTP/1.0" 200 - 0.01s
+2025-09-19 11:44:33.035 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "GET /api/projects HTTP/1.0" 401 - 0.00s
+2025-09-19 11:44:50.909 | INFO     | app.core.middleware:dispatch:26 - 120.238.240.231:0 - "POST /api/token HTTP/1.0" 200 - 0.27s

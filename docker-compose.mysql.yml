@@ -1,0 +1,21 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: formu_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: milo_2357
+      MYSQL_DATABASE: FORMU
+      MYSQL_USER: formu_user
+      MYSQL_PASSWORD: milo_2357
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"  # 映射到宿主机的3306端口
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    command: --default-authentication-plugin=mysql_native_password
+
+volumes:
+  mysql_data:

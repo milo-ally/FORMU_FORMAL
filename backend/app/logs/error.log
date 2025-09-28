@@ -1,0 +1,2 @@
+2025-08-09 01:35:22.564 | ERROR    | main:save_uploaded_file:60 - File save error: module 'datetime' has no attribute 'now'
+2025-08-09 01:35:22.565 | ERROR    | main:prompt_generation:132 - Prompt generation error: module 'datetime' has no attribute 'now'

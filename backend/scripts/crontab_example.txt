@@ -1,0 +1,18 @@
+# 文件清理定时任务配置示例
+# 编辑crontab: crontab -e
+# 添加以下行来设置定时清理任务
+
+# 每天凌晨2点清理30天前的文件
+0 2 * * * cd /path/to/your/project/backend && python scripts/cleanup_files.py --days 30 >> logs/cleanup.log 2>&1
+
+# 每周日凌晨3点清理7天前的文件（更频繁的清理）
+0 3 * * 0 cd /path/to/your/project/backend && python scripts/cleanup_files.py --days 7 >> logs/cleanup.log 2>&1
+
+# 每月1号凌晨4点清理90天前的文件（长期清理）
+0 4 1 * * cd /path/to/your/project/backend && python scripts/cleanup_files.py --days 90 >> logs/cleanup.log 2>&1
+
+# 使用说明:
+# 1. 将 /path/to/your/project 替换为实际的项目路径
+# 2. 确保 logs 目录存在
+# 3. 根据需要调整清理频率和保留天数
+# 4. 可以先使用 --dry-run 参数测试

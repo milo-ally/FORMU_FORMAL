@@ -1,0 +1,14 @@
+cozepy
+fastapi>=0.103.0
+uvicorn>=0.15.0
+pydantic>=2.5.0
+pydantic-settings>=2.0.0
+httpx>=0.24.0
+python-multipart>=0.0.5
+loguru==0.7.2
+sqlalchemy[asyncio]>=2.0.0
+aiomysql>=0.1.1
+cryptography
+python-jose[cryptography]>=3.3.0
+bcrypt==4.0.1
+websockets>=11.0

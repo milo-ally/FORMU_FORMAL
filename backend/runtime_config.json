@@ -1,0 +1,24 @@
+{
+  "coze": {
+    "authorization": "pat_4gEljPSHSVY6oDUsiuL4DxTTHhxSpfA9JoF1wCuIYAa6YkuUhh7sNXsWIsXPomXo",
+    "baseUrl": "https://api.coze.cn"
+  },
+  "bots": {
+    "cuteStyle": "7535162220498894900",
+    "pictureAnalysis": "7535889557259419663",
+    "steampunkStyle": "7535162220498894900",
+    "japaneseComicStyle": "7535162220498894900",
+    "americanComicStyle": "7535162220498894900",
+    "professionStyle": "7535162220498894900",
+    "cyberpunkStyle": "7535162220498894900",
+    "gothicStyle": "7535162220498894900",
+    "realisticStyle": "7535162220498894900"
+  },
+  "tripo": {
+    "apiKey": "tsk_no4iGUfylB3KAJ_pL5CrxNpPA4gCMGV_iAutdKdy7uW"
+  },
+  "sora": {
+    "apiKey": "sk-CnAbAcRs5PjUJbIsF3293dCc8d3349238d7822D9602c38B4",
+    "baseUrl": "https://jy.ai666.net"
+  }
+}

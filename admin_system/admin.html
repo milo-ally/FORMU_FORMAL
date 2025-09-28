@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMU 管理员系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .title {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin-bottom: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .user-list {
+            margin-top: 30px;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+        }
+        
+        .user-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .user-item:last-child {
+            border-bottom: none;
+        }
+        
+        .user-info {
+            font-weight: 500;
+        }
+        
+        .user-type {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .type-founder {
+            background: #ffd700;
+            color: #b8860b;
+        }
+        
+        .type-time_master {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .type-spark_partner {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        
+        .type-null {
+            background: #f5f5f5;
+            color: #666;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+        }
+        
+        .section h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">FORMU 管理员系统</h1>
+        
+        <div id="message"></div>
+        
+        <div class="section">
+            <h3>分配用户类型</h3>
+            
+            <div class="form-group">
+                <label for="adminPassword">管理员密码</label>
+                <input type="password" id="adminPassword" placeholder="请输入管理员密码 (Lihan13230118)">
+            </div>
+            
+            <div class="form-group">
+                <label for="targetUsername">目标用户名</label>
+                <input type="text" id="targetUsername" placeholder="请输入要分配类型的用户名">
+            </div>
+            
+            <div class="form-group">
+                <label for="userType">用户类型</label>
+                <select id="userType">
+                    <option value="">请选择用户类型</option>
+                    <option value="founder">创始人</option>
+                    <option value="time_master">时光主理人</option>
+                    <option value="spark_partner">星火合伙人</option>
+                </select>
+            </div>
+            
+            <button class="btn" onclick="assignUserType()">分配用户类型</button>
+        </div>
+        
+        <div class="section">
+            <h3>用户列表</h3>
+            <button class="btn" onclick="loadUsers()" style="background: #6c757d;">刷新用户列表</button>
+            <div class="user-list" id="userList"></div>
+        </div>
+    </div>
+
+    <script>
+        // API基地址 - 根据部署环境调整
+        const API_BASE = '/api/admin';
+        
+        async function assignUserType() {
+            const adminPassword = document.getElementById('adminPassword').value;
+            const targetUsername = document.getElementById('targetUsername').value.trim();
+            const userType = document.getElementById('userType').value;
+            
+            if (!adminPassword) {
+                showMessage('请输入管理员密码', 'error');
+                return;
+            }
+            
+            if (!targetUsername) {
+                showMessage('请输入目标用户名', 'error');
+                return;
+            }
+            
+            if (!userType) {
+                showMessage('请选择用户类型', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}/assign-user-type`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        admin_username: 'Lihan',
+                        admin_password: adminPassword,
+                        target_username: targetUsername,
+                        user_type: userType
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showMessage(data.message, 'success');
+                    document.getElementById('targetUsername').value = '';
+                    document.getElementById('userType').value = '';
+                    loadUsers(); // 刷新用户列表
+                } else {
+                    showMessage(data.detail || '分配失败', 'error');
+                }
+            } catch (error) {
+                showMessage('分配失败: ' + error.message, 'error');
+            }
+        }
+        
+        async function loadUsers() {
+            console.log('🔄 开始获取用户列表...');
+            try {
+                const response = await fetch(`${API_BASE}/users`);
+                console.log('📡 响应状态:', response.status);
+                
+                if (response.ok) {
+                    const users = await response.json();
+                    console.log('📋 获取到用户数据:', users);
+                    displayUsers(users);
+                    showMessage(`成功加载 ${users.length} 个用户`, 'success');
+                } else {
+                    const errorText = await response.text();
+                    console.error('❌ 响应错误:', errorText);
+                    showMessage('获取用户列表失败: ' + response.status, 'error');
+                }
+            } catch (error) {
+                console.error('❌ 请求失败:', error);
+                showMessage('获取用户列表失败: ' + error.message, 'error');
+            }
+        }
+        
+        function displayUsers(users) {
+            const userList = document.getElementById('userList');
+            if (users.length === 0) {
+                userList.innerHTML = '<div class="user-item">暂无用户</div>';
+                return;
+            }
+            
+            userList.innerHTML = users.map(user => `
+                <div class="user-item">
+                    <div class="user-info">${user.username}</div>
+                    <div class="user-type type-${user.user_type || 'null'}">
+                        ${getUserTypeName(user.user_type)}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function getUserTypeName(type) {
+            const typeNames = {
+                'founder': '创始人',
+                'time_master': '时光主理人',
+                'spark_partner': '星火合伙人'
+            };
+            return typeNames[type] || '未分配';
+        }
+        
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML = `<div class="message ${type}">${message}</div>`;
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 5000);
+        }
+        
+        // 页面加载时自动获取用户列表
+        window.onload = function() {
+            loadUsers();
+        };
+    </script>
+</body>
+</html>
